@@ -1,0 +1,15 @@
+- hosts: jenkins
+  become: true
+  vars:
+    jenkins_hostname: "{{inventory_hostname}}"
+    java_packages:
+      - openjdk-11-jdk
+    jenkins_plugins:
+      - blueocean
+    jenkins_admin_username: admin
+    jenkins_admin_password: admin
+    jenkins_http_port: 8080
+    jenkins_jar_location: /opt/jenkins-cli.jar
+  roles:
+    - role: geerlingguy.java
+    - role: geerlingguy.jenkins
