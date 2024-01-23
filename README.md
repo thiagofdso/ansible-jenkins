@@ -1,4 +1,5 @@
 # Requirements
+
 Have ansible installed
 
 https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
@@ -14,16 +15,21 @@ yum install ansible
 ## Install Roles for java and jenkins
 
 ansible-galaxy role install geerlingguy.java -p roles
+
 ansible-galaxy role install geerlingguy.jenkins -p roles
 
 # Create an inventory
 
 [jenkins]
+
 hostname
 
 [all:vars]
+
 ansible_connection=ssh
+
 ansible_user=<username>
+
 ansible_ssh_private_key_file=<ssh key>
 
 
